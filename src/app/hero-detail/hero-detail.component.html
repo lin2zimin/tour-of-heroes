@@ -3,10 +3,8 @@
   <div>id: {{ heroFormFather.id }}</div>
   <div>
     <label for="hero-name"> Hero name: </label>
-    <input
-      id="hero-name"
-      [(ngModel)]="heroFormFather.name"
-      placeholder="name"
-    />
+    <input id="hero-name" [(ngModel)]="heroFormFather.name" placeholder="name" />
   </div>
+
+  <button type="button" (click)="goBack()"> go back</button>
 </div>

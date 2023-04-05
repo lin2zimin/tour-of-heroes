@@ -3,5 +3,11 @@
   <button type="button" class="clear" (click)="messageService.clear()">
     Clear messages
   </button>
+  <button type="button" class="add" (click)="messageService.add('111')">
+    add messages
+  </button>
+  <button type="button" class="drop 1" (click)="messageService.decline()">
+    drop 1
+  </button>
   <div *ngFor="let message of messageService.messages">{{ message }}</div>
 </div>

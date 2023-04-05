@@ -7,5 +7,9 @@ import { MessageService } from '../message.service';
   styleUrls: ['./messages.component.less'],
 })
 export class MessagesComponent {
-  constructor(public messageService: MessageService) {}
+  constructor(public messageService: MessageService) { }
+
+  ngOnInit() {
+    this.messageService.log()
+  }
 }

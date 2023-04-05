@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Hero } from 'src/type/hero';
 import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 // import { HEROS } from '../mock-heros';
 @Component({
   selector: 'app-heros',
@@ -8,7 +9,10 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./heros.component.less'],
 })
 export class HerosComponent {
-  constructor(private heroService: HeroService) {}
+  constructor(
+    private heroService: HeroService,
+    private messageService: MessageService
+  ) { }
   hero: Hero = { name: 'WindStorm', id: 1 };
   selectedHero?: Hero;
 

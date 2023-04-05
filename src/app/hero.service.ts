@@ -7,7 +7,7 @@ import { MessageService } from './message.service';
   providedIn: 'root',
 })
 export class HeroService {
-  constructor(private messageService: MessageService) {}
+  constructor(private messageService: MessageService) { }
 
   heros: Hero[] = [
     { id: 12, name: 'Dr. Nice' },
@@ -22,8 +22,15 @@ export class HeroService {
   ];
 
   getHeros(): Observable<Hero[]> {
-    const heroes = of(HEROS);
-    this.messageService.add('HeroService : fetched heros');
+    const heroes = of(this.heros);
+    // this.messageService.add('HeroService : fetched heros');
     return heroes;
+  }
+  getHerosbyId(id: number): Observable<Hero> {
+    const filterHeros = this.heros.filter((hero) => hero.id === id)
+    const hero = of(filterHeros[0]);
+    // this.messageService.add('HeroService : fetched heros');
+    return hero;
+
   }
 }
